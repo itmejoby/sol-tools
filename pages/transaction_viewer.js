@@ -5,7 +5,7 @@ import React from 'react';
 
 
 export default function TransactionViewer() {
-    const [address, setAddress] = React.useState(0);
+    const [address, setAddress] = React.useState("");
 
     const handleSubmit = async (event) => {
         event.preventDefault(); // Stop the form from submitting and refreshing the page.
@@ -24,8 +24,7 @@ export default function TransactionViewer() {
                 <form onSubmit={handleSubmit}>
                     <input type="text" id="address" name="address" placeholder="Enter a Solana address" required/>
                 </form>
-                <h3>pulling {address}</h3>
-                <Transactions address={address}></Transactions>
+                {address ? <Transactions address={address}></Transactions> : <></>}
             </main>
         </Layout>
     )

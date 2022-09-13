@@ -18,7 +18,7 @@ export default function Table({ descriptions }) {
         <Box sx={{ width: '100%' }}>
             <Stack spacing={2}>
                 {descriptions.map(function (val, index) {
-                    return (<Item>{val}</Item>)
+                    return (<Item>{val}</Item>) // todo items need unique keys (tx id)
                 })}
             </Stack>
         </Box>
