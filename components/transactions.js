@@ -11,13 +11,15 @@ export default function Transactions({ address }) {
 
     console.log(data)
 
-    // todo handle empty description
-    // todo show more than descriptions
-    var descriptions = data.map(function(val, index) {
-       return val['description']
+    var slimData = data.map(function(val,index) {
+        return {
+            description: val['description'],
+            transactionId: val['signature'],
+            timestamp: val['timestamp']
+        }
     });
 
-    console.log(descriptions);
+    console.log(slimData); // todo just send all data through and show that on "inspect"
     
-    return (<Table descriptions={descriptions}></Table>)
+    return (<Table data={slimData}></Table>)
 }
