@@ -2,6 +2,7 @@ import Layout from '../components/layout'
 import Transactions from '../components/transactions'
 import styles from '../styles/Home.module.css'
 import React from 'react';
+import TextField from '@mui/material/TextField';
 
 
 export default function TransactionViewer() {
@@ -21,9 +22,10 @@ export default function TransactionViewer() {
                 <h1 className={styles.title}>
                     Transaction Viewer
                 </h1>
-                <form onSubmit={handleSubmit}>
-                    <input type="text" id="address" name="address" placeholder="Enter a Solana address" required/>
-                </form>
+                <br/>
+                    <form onSubmit={handleSubmit} >
+                        <TextField className={styles.input} id="address" label="Enter a Solana address" variant="outlined" required />
+                    </form>
                 {address ? <Transactions address={address}></Transactions> : <></>}
             </main>
         </Layout>

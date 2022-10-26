@@ -12,6 +12,10 @@
   align-items: center;
 }
 
+.input {
+  min-width: 85vw;
+}
+
 .footer {
   display: flex;
   flex: 1;
