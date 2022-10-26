@@ -3,6 +3,8 @@ import Transactions from '../components/transactions'
 import styles from '../styles/Home.module.css'
 import React from 'react';
 import TextField from '@mui/material/TextField';
+import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
 
 
 export default function TransactionViewer() {
@@ -23,9 +25,13 @@ export default function TransactionViewer() {
                     Transaction Viewer
                 </h1>
                 <br/>
-                    <form onSubmit={handleSubmit} >
-                        <TextField className={styles.input} id="address" label="Enter a Solana address" variant="outlined" required />
-                    </form>
+                <Box className={styles.box}>
+                    <Paper>
+                        <form noValidate autoComplete='on' onSubmit={handleSubmit} >
+                            <TextField className={styles.input} id="address" label="Enter a Solana address" variant="outlined" required />
+                        </form>
+                    </Paper>
+                </Box>
                 {address ? <Transactions address={address}></Transactions> : <></>}
             </main>
         </Layout>
