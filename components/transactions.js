@@ -9,8 +9,6 @@ export default function Transactions({ address }) {
     if (isLoading) return <CircularProgress />;
     if (isError || data["error"]) return <Alert severity="error">Error loading transactions from {address}</Alert>;
 
-    console.log(data)
-
     var slimData = data.map(function(val,index) {
         return {
             description: val['description'],
@@ -18,8 +16,6 @@ export default function Transactions({ address }) {
             timestamp: val['timestamp']
         }
     });
-
-    console.log(slimData); // todo just send all data through and show that on "inspect"
     
     return (<Table data={slimData}></Table>)
 }
