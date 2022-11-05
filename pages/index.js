@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-        <Link href="/transaction_viewer">
+          <Link href="/transaction_viewer">
             <a className={styles.card}>
               <h2>Transactions &rarr;</h2>
               <p>View transations for a wallet address via the Helius API</p>

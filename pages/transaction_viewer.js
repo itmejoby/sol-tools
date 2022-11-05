@@ -1,10 +1,10 @@
-import Layout from '../components/layout'
-import Transactions from '../components/transactions'
-import styles from '../styles/Home.module.css'
-import React from 'react';
-import TextField from '@mui/material/TextField';
-import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import TextField from '@mui/material/TextField';
+import React from 'react';
+import Layout from '../components/layout';
+import Transactions from '../components/transactions';
+import styles from '../styles/Home.module.css';
 
 
 export default function TransactionViewer() {
@@ -24,7 +24,7 @@ export default function TransactionViewer() {
                 <h1 className={styles.title}>
                     Transaction Viewer
                 </h1>
-                <br/>
+                <br />
                 <Box className={styles.box}>
                     <Paper>
                         <form noValidate autoComplete='on' onSubmit={handleSubmit} >
